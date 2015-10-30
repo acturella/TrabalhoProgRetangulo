@@ -5,12 +5,13 @@
 * Professor: Alex Salgado 
 ***************************************/
 
+
 #include <stdio.h>
 
 int main()
 {
     
-    const int COD_ASCII_ASTERISCO = 42;
+    char caractere;
 
     //Variaveis de controle de loop
     int i, j;
@@ -34,13 +35,23 @@ int main()
         printf( "Tamanho da altura: ");
         scanf( "%d", &altura );
         
+        printf( "Caractere que deseja usar: ");
+        scanf( " %c", &caractere );        
+        
         printf( "Olá, meu nome é Andrea e o retângulo ficou assim:\n" );
         
         for ( i = 0; i < altura; i++ )
         {
             for( j = 0; j < lado; j++ )
             {
-                printf( "%c", COD_ASCII_ASTERISCO );
+                if( i == 0 || i == altura - 1 || j == 0 || j == lado - 1)
+                {
+                    printf(" %c ", caractere);
+                }
+                else
+                {
+                    printf("   ");
+                }   
             }
             printf( "\n" );
         }
